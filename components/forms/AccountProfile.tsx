@@ -24,7 +24,7 @@ const AccountProfile = ({ user, btnTitle }: Props) => {
 
   return (
     // <Form>
-      
+      <h1>Form</h1>
     // </Form>
   );
 };
