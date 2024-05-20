@@ -6,14 +6,14 @@ import { zodResolver } from '@hookform/resolvers/zod'
 
 interface Props {
   user: {
-    id: string;
-    objectId: string;
-    username: string;
-    name: string;
-    bio: string;
-    image: string;
+    id?: string;
+    objectId?: string;
+    username?: string;
+    name?: string;
+    bio?: string;
+    image?: string;
   };
-  btnTitle: string;
+  btnTitle?: string;
 }
 
 const AccountProfile = ({ user, btnTitle }: Props) => {
