@@ -7,15 +7,23 @@ async function Page() {
   const user = await currentUser();
   if (!user) return null; // to avoid typescript warnings
 
-  const userInfo = {}
+  interface UserInfo {
+    _id?: string;
+    username?: string;
+    name?: string;
+    bio?: string;
+    image?: string;
+  }
+
+  const userInfo: UserInfo = {}
 
   const userData = {
     id: user?.id,
-    objectId: userInfo?._id,
-    username: userInfo?.username || user?.username,
+    objectId: userInfo?._id || "",
+    username: userInfo?.username || user?.username || "",
     name: userInfo?.name || user.firstName || "",
     bio: userInfo?.bio || "",
-    image: userInfo?.image || user?.imageUrl,
+    image: userInfo?.image || user?.imageUrl || "",
   };
 
   return (
